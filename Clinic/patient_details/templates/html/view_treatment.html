@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatments</title>
+</head>
+<body>
+    <a href="{% url 'history' %}">Add history</a>
+    <h2 >Treatement History</h2><br>
+    
+    {% for tasks in task %}
+    <div>
+        <h3>Date : {{ tasks.date }}</h3>
+        <h3>Treatement :</h3><p> {{ tasks.treatement }}</p>
+        
+        <br><br>
+    </div>
+    {% endfor %}
+</body>
+</html>

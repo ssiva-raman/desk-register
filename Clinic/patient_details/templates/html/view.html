@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+</head>
+<body>
+    <a href={% url 'new_user' %}>Add patient</a>
+    {% for users in user %}
+    <div>
+        <h4>Patient Name : {{ users.name }}</h4>
+        <h4>Patient age : {{ users.age }}</h4>
+        <h4>Patient id : {{ users.id }}</h4>
+        <h4>Mobile number : {{ users.phone }}</h4>
+        <a href="{% url 'treatment' users.user_id %}"> View details</a>
+        <br>
+        <a href="{% url 'update' users.user_id %}"> Update</a><br>
+        <a href="{% url 'delete' users.user_id %}"> Delete</a>
+        <br>
+    </div>
+    {% endfor %}
+    <div>
+        <a href="{%url 'logout'%}">logout</a>
+    </div>
+</body>
+</html>
